@@ -1,0 +1,184 @@
+package br.edu.ifg;
+
+public class Veiculo {
+	
+	public Veiculo(String cor, String tipo, double velocidadeMaxima, String cobustivel, String marca, String modelo,
+			String ano, double capacidadePeso, String uso, double tamanho, int nivelCombustivel, double velocidadeAtual,
+			boolean ligadoDesligado,double pesoCarregado) {
+		super();
+		this.pesoCarregado=pesoCarregado;
+		this.cor = cor;
+		this.tipo = tipo;
+		this.velocidadeMaxima = velocidadeMaxima;
+		this.cobustivel = cobustivel;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.ano = ano;
+		this.capacidadePeso = capacidadePeso;
+		this.uso = uso;
+		this.tamanho = tamanho;
+		this.nivelCombustivel = nivelCombustivel;
+		this.velocidadeAtual = velocidadeAtual;
+		this.ligadoDesligado = ligadoDesligado;
+	}
+	private String cor;
+	public void setTamanho(double tamanho) {
+		this.tamanho = tamanho;
+	}
+	private String tipo;
+	private double velocidadeMaxima;
+    private String cobustivel;
+    private String marca;
+    private String modelo;
+    private String ano;
+    private double capacidadePeso;
+    private String uso;
+    private double tamanho;
+    private int nivelCombustivel;
+    private double velocidadeAtual;
+    private boolean ligadoDesligado;
+    private double pesoCarregado;
+	
+    public double getPesoCarregado() {
+		return pesoCarregado;
+	}
+
+
+
+	public void setPesoCarregado(double pesoCarregado) {
+		this.pesoCarregado = pesoCarregado;
+	}
+
+
+
+	public boolean isLigadoDesligado() {
+		return ligadoDesligado;
+	}
+
+
+
+	public void setLigadoDesligado(boolean ligadoDesligado) {
+		this.ligadoDesligado = ligadoDesligado;
+	}
+
+	@Override
+	public String toString() {
+		return "Veiculo [tipo=" + tipo + ", cor=" + cor + ", velocidadeMaxima=" + velocidadeMaxima + ", cobustivel="
+				+ cobustivel + ", marca=" + marca + ", modelo=" + modelo + ", ano=" + ano + ", capacidadePeso="
+				+ capacidadePeso + ", uso=" + uso + ", tamanho=" + tamanho + "]";
+	}
+	
+   
+      
+      
+	
+      
+	public int getNivelCombustivel() {
+		return nivelCombustivel;
+	}
+	public void setNivelCombustivel(int nivelCombustivel) {
+		this.nivelCombustivel = nivelCombustivel;
+	}
+	public double getVelocidadeAtual() {
+		return velocidadeAtual;
+	}
+	public void setVelocidadeAtual(double velocidadeAtual) {
+		this.velocidadeAtual = velocidadeAtual;
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	public String getCor() {
+		return cor;
+	}
+	public void setCor(String cor) {
+		this.cor = cor;
+	}
+	public double getVelocidadeMaxima() {
+		return velocidadeMaxima;
+	}
+	public void setVelocidadeMaxima(double velocidadeMaxima) {
+		this.velocidadeMaxima = velocidadeMaxima;
+	}
+	public String getCobustivel() {
+		return cobustivel;
+	}
+	public void setCobustivel(String cobustivel) {
+		this.cobustivel = cobustivel;
+	}
+	public String getMarca() {
+		return marca;
+	}
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+	public String getModelo() {
+		return modelo;
+	}
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+	public String getAno() {
+		return ano;
+	}
+	public void setAno(String ano) {
+		this.ano = ano;
+	}
+	public double getCapacidadePeso() {
+		return capacidadePeso;
+	}
+	public void setCapacidadePeso(double capacidadePeso) {
+		this.capacidadePeso = capacidadePeso;
+	}
+	public String getUso() {
+		return uso;
+	}
+	public void setUso(String uso) {
+		this.uso = uso;
+	}
+	
+	public boolean ligar() {
+		if(this.nivelCombustivel>0) {
+			System.out.println("ligou!!!");
+		    this.ligadoDesligado=true;
+			return true;
+		}
+		System.out.println("Sem combustivel!!!!");
+		return false;
+				
+	}
+	public boolean acelerar(double novaVelocidade) {
+		if(novaVelocidade<this.velocidadeMaxima) {
+			System.out.println("Acelerou!!!");
+			this.velocidadeAtual=novaVelocidade;
+			return true;
+		}
+	 System.out.println("Não pode acelerar mais!!!!!!! ");
+	 return false;
+	    
+	}
+	public boolean decolar() {
+		if(this.tipo.equals("aereo")) {
+			System.out.println("Decolou!!!!!");
+			return true;
+		}
+		System.out.println("Esse veiculo não pode decolar");
+		return false;
+	}
+	public void freiar() {
+	    this.velocidadeAtual=0;
+	}
+	public boolean adicionarPeso(double peso) {
+		if(this.capacidadePeso>=(peso+this.pesoCarregado)) {
+			System.out.println("Peso adicionado!!!");
+			this.pesoCarregado=this.pesoCarregado+peso;
+			return true;
+		}
+		System.out.println("Isso ultrapassa a capacidade!!!!");
+		return false;
+		
+	}
+}

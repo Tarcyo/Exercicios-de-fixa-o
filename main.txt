@@ -1,0 +1,32 @@
+package br.edu.ifg;
+
+public class main {
+
+	public static void main(String[] args) {
+	
+		
+		
+		
+		Veiculo carro=new Veiculo("vermelho","terrestre",300.00,"gasolina","Volkswagen","gol","2012",400.00,"transporte",2.4,0,0,false,70);
+		Veiculo drone=new Veiculo("purpura","aereo",200.00,"eletricidade","Multilazer","new shark","2022",60.00,"gravação",0.7,75,0,false,11);
+		
+		carro.setNivelCombustivel(30);
+		//if(carro.ligar()){
+		//	if(carro.acelerar(30)) {
+			//	carro.decolar();
+			//}	
+			
+		//}
+		if(drone.ligar()){
+			if(drone.acelerar(20)) {
+				if(drone.decolar()) {
+					drone.adicionarPeso(50);
+				}
+			}	
+			
+		}
+		
+
+	}
+
+}
